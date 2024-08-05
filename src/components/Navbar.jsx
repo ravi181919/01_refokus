@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 import Button from "./Button";
 import { IoMenu } from "react-icons/io5";
 const Navbar = () => {
+  
   return (
-    <div className="max-w-screen-lg mx-auto flex justify-between items-center border-b border-zinc-500  py-4">
+    <div className="max-w-[300px] mx-auto lg:max-w-screen-lg lg:mx-auto flex justify-between items-center border-b border-zinc-500  py-4">
       <div className="flex items-center">
         <img
           src="https://cdn.prod.website-files.com/6334198f239547d0f9cd84b3/63349803431f1562dccf1802_refokus%20logo.svg"
