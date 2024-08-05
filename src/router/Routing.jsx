@@ -4,16 +4,18 @@ import Work from "../components/Work";
 import About from "../components/About";
 import News from "../components/News";
 
-function Routing(){
+function Routing() {
   return (
-    <Routes>
-      <Route path="/" element={ <Home /> } />
-      <Route path="/home" element={ <Home /> } />
-      <Route path="/work" element={ <Work /> } />
-      <Route path="/about" element={ <About /> } />
-      <Route path="/news" element={ <News /> } />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/01_refokus/" element={<Home />} />
+        <Route path="/01_refokus/home" element={<Home />} />
+        <Route path="/01_refokus/work" element={<Work />} />
+        <Route path="/01_refokus/about" element={<About />} />
+        <Route path="/01_refokus/news" element={<News />} />
+      </Routes>
+    </>
   );
-};
+}
 
 export default Routing;

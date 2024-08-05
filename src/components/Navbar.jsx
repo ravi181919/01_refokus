@@ -28,7 +28,7 @@ const Navbar = () => {
                       : "",
                   ].join("")
                 }
-                to={`/${itemName.toLocaleLowerCase()}`}
+                to={`01_refokus/${itemName.toLocaleLowerCase()}`}
               >
                 {itemName}
               </NavLink>
