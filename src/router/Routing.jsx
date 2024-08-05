@@ -7,7 +7,7 @@ import News from "../components/News";
 function Routing(){
   return (
     <Routes>
-      <Route path="" element={ <Home /> } />
+      <Route path="/" element={ <Home /> } />
       <Route path="/home" element={ <Home /> } />
       <Route path="/work" element={ <Work /> } />
       <Route path="/about" element={ <About /> } />
