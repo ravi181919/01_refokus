@@ -1,9 +1,11 @@
 import React from "react";
 import Button from "./Button";
 
-const Product = ({ data }) => {
+const Product = ({ data, windowPositionChange, productsIndex }) => {
   return (
-    <div className="max-w-screen-lg mx-auto p-8 flex items-center justify-between">
+    <div
+    onMouseEnter={() => windowPositionChange(productsIndex)}
+     className="max-w-screen-lg mx-auto h-[15rem]  p-8 flex items-center justify-between">
       <h1 className="text-3xl leading-none tracking-wide font-medium capitalize">
         {data.title}
       </h1>

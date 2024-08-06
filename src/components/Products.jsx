@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Product from "./Product";
-
+import { motion } from "framer-motion";
+import axios from 'axios';
 const Products = () => {
   const data = [
     {
@@ -40,18 +41,84 @@ const Products = () => {
       case: true,
     },
     {
-      title: "Like Magic",
-      des: "We designed and developed a magical gaming experience made in Webflow to promote the translation service and their sponsorship of the 2022 Webflow Conference.",
+      title: "Showcase",
+      des: "Our OMR22 Masterclass teaches how to create a showcase website, and we made a showcase website about showcase websites to promote the art of showcasing.",
       live: true,
       case: true,
     },
   ];
   const [productsData, setProductsData] = useState(data);
+
+  const [windowPosition, setWindowPosition] = useState(0);
+
+  const windowPositionChange = (productsIndex) => {
+    setWindowPosition(() => productsIndex * 15);
+  };
+
+  const productsVideoAPI = [
+    {
+      API: "https://cdn.dribbble.com/userupload/13541293/file/original-1baad81cec474e2345a480832925a2cc.mp4",
+    },
+    {
+      API: "https://cdn.dribbble.com/userupload/13541207/file/original-c4ae1adf60d8b827f9ba91d25298000d.mp4",
+    },
+    {
+      API: "https://cdn.dribbble.com/userupload/13541348/file/original-242e170c2bef86a0f1b74fbc22c3ca19.mp4",
+    },
+    {
+      API: "https://cdn.dribbble.com/userupload/13541232/file/original-ab7806e0dd00f94be5aaccae4826db61.mp4",
+    },
+    {
+      API: "https://cdn.dribbble.com/userupload/13541181/file/original-1e6a87ff3bf9e82a217be6c279e00d1d.mp4",
+    },
+    {
+      API: "https://cdn.dribbble.com/userupload/4397933/file/original-b279004001d149854121d9538d3417c8.mp4",
+    },
+    {
+      API: "https://cdn.dribbble.com/userupload/4397938/file/original-1335c48b0853f2653bea6cffbe9cfaae.mp4",
+    },
+  ];
+
+  const [productsVideoAPICall, setProductsVideoAPICall] =
+  useState(productsVideoAPI);
+
   return (
-    <div className="w-full mt-10 ">
+    <div className="w-full mt-10 relative">
       {productsData.map((values, valuesIndex) => (
-        <Product key={valuesIndex} data={values} />
+        <Product
+          key={valuesIndex}
+          data={values}
+          productsIndex={valuesIndex}
+          windowPositionChange={windowPositionChange}
+        />
       ))}
+      <div className="absolute w-full h-full top-0 pointer-events-none">
+        <motion.div
+          initial={{ y: windowPosition, x: "-50%" }}
+          animate={{ y: windowPosition + "rem" }}
+          className="absolute overflow-hidden left-[43%]  rounded-md w-[22rem] h-[15rem]"
+        >
+          {productsVideoAPICall.map((ele, index) => (
+          <motion.div
+            animate={{ y: -windowPosition + "rem" }}
+            className="w-full h-full overflow-hidden"
+          >
+            
+              <video
+                src={ele.API}
+                autoPlay
+                muted
+                loop
+                preload
+                draggable='false'
+                key={index}
+                className="h-full w-full"
+              ></video>
+           
+          </motion.div>
+        ))}
+        </motion.div>
+      </div>
     </div>
   );
 };

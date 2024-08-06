@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import { useScroll } from "framer-motion";
 
 const Work = () => {
+
   const images = [
     {
       url: "https://cdn.prod.website-files.com/6334198f239547d0f9cd84b3/634ef09178195ce0073e38f3_Refokus%20Tools-1.png",
@@ -45,9 +46,10 @@ const Work = () => {
       isActive: false,
     },
   ];
-  const [workImages, setWorkImages] = useState(images);
 
+  const [workImages, setWorkImages] = useState(images);
   const { scrollYProgress } = useScroll();
+
   scrollYProgress.on("change", (data) => {
     let scrollYProgressValues = Math.floor(data * 100);
 
@@ -91,6 +93,7 @@ const Work = () => {
             (ele, inde) =>
               ele.isActive && (
                 <img
+                key={inde}
                   src={ele.url}
                   className="absolute w-56 rounded-md -translate-x-1/2 -translate-y-1/2"
                   style={{ top: ele.top, left: ele.left }}
