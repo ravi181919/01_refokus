@@ -25,13 +25,13 @@ const Cards = () => {
       icon: <VscArrowSmallRight />,
       isParagragh: false,
       isMainHeading: true,
-      hover:'bg-violet-600'    },
+      hover:true    },
   ];
   return (
    <div className="w-full ">
      <div className="max-w-screen-lg mx-auto my-10 px-10 flex gap-[2px] rounded-md overflow-hidden">
       {value.map((ele, index) => (
-        <Card key={index} cardValues={ele} />
+        <Card key={index} cardValues={ele} hover={ele.hover}/>
       ))}
     </div>
    </div>

@@ -1,8 +1,11 @@
+import { motion } from "framer-motion";
 import React from "react";
 
-const Card = ({ cardValues }) => {
+const Card = ({ cardValues, hover='false' }) => {
+  
   return (
-    <div
+    <motion.div
+    whileHover={{backgroundColor: hover === true && '#7443FC', padding: '19px' }}
       className={`w-full ${cardValues.width} p-3 hover:${cardValues.hover} hover:duration-150 bg-zinc-700 rounded-md flex flex-col justify-between min-h-72`}
     >
       <div className="w-full">
@@ -32,7 +35,7 @@ const Card = ({ cardValues }) => {
           </p>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
