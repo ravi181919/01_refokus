@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Product from "./Product";
 import { motion } from "framer-motion";
-import axios from 'axios';
 const Products = () => {
   const data = [
     {
@@ -80,7 +79,7 @@ const Products = () => {
   ];
 
   const [productsVideoAPICall, setProductsVideoAPICall] =
-  useState(productsVideoAPI);
+    useState(productsVideoAPI);
 
   return (
     <div className="w-full mt-10 relative">
@@ -99,23 +98,22 @@ const Products = () => {
           className="absolute overflow-hidden left-[43%]  rounded-md w-[22rem] h-[15rem]"
         >
           {productsVideoAPICall.map((ele, index) => (
-          <motion.div
-            animate={{ y: -windowPosition + "rem" }}
-            className="w-full h-full overflow-hidden"
-          >
+            <motion.div
+              key={index}
+              animate={{ y: -windowPosition + "rem" }}
+              className="w-full h-full overflow-hidden"
+            >
               <video
                 src={ele.API}
                 autoPlay
                 muted
                 loop
-                preload
-                draggable='false'
+                draggable="false"
                 key={index}
                 className="h-full w-full object-cover"
               ></video>
-           
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </div>
