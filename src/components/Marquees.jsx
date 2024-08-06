@@ -28,7 +28,7 @@ const Marquees = () => {
   ];
   const [MarqueeSRC, setMarqueeSRC] = useState(imageSrc)
   return (
-    <div className="py-20 my-10">
+    <div className="py-20 my-10 w-full relative overflow-hidden">
         {MarqueeSRC.map((elem, index) => <Marquee key={index} src={elem}/>)}
     </div>
   );

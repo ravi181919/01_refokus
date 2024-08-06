@@ -111,7 +111,7 @@ const Products = () => {
                 preload
                 draggable='false'
                 key={index}
-                className="h-full w-full"
+                className="h-full w-full object-cover"
               ></video>
            
           </motion.div>
