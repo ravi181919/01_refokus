@@ -103,7 +103,6 @@ const Products = () => {
             animate={{ y: -windowPosition + "rem" }}
             className="w-full h-full overflow-hidden"
           >
-            
               <video
                 src={ele.API}
                 autoPlay
