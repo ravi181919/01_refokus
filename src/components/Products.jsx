@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import Product from "./Product";
 import { motion } from "framer-motion";
+import a from '../../public/videos/a.mp4'
+import b from '../../public/videos/b.mp4'
+import c from '../../public/videos/c.mp4'
+import d from '../../public/videos/d.mp4'
+import e from '../../public/videos/e.mp4'
+import f from '../../public/videos/f.mp4'
+import g from '../../public/videos/g.mp4'
+
 const Products = () => {
   const data = [
     {
@@ -55,28 +63,15 @@ const Products = () => {
   };
 
   const productsVideoAPI = [
-    {
-      API: "https://cdn.dribbble.com/userupload/13541293/file/original-1baad81cec474e2345a480832925a2cc.mp4",
-    },
-    {
-      API: "https://cdn.dribbble.com/userupload/13541207/file/original-c4ae1adf60d8b827f9ba91d25298000d.mp4",
-    },
-    {
-      API: "https://cdn.dribbble.com/userupload/13541348/file/original-242e170c2bef86a0f1b74fbc22c3ca19.mp4",
-    },
-    {
-      API: "https://cdn.dribbble.com/userupload/13541232/file/original-ab7806e0dd00f94be5aaccae4826db61.mp4",
-    },
-    {
-      API: "https://cdn.dribbble.com/userupload/13541181/file/original-1e6a87ff3bf9e82a217be6c279e00d1d.mp4",
-    },
-    {
-      API: "https://cdn.dribbble.com/userupload/4397933/file/original-b279004001d149854121d9538d3417c8.mp4",
-    },
-    {
-      API: "https://cdn.dribbble.com/userupload/4397938/file/original-1335c48b0853f2653bea6cffbe9cfaae.mp4",
-    },
-  ];
+    {API: a},
+    {API: g},
+    {API: c},
+    {API: e},
+    {API: b},
+    {API: f},
+    {API: d},
+    
+  ]
 
   const [productsVideoAPICall, setProductsVideoAPICall] =
     useState(productsVideoAPI);
